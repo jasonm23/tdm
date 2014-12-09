@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'sinatra'
+
+set :bind, '0.0.0.0'
+set :port, 5678
+
+get '/toggle' do
+  `osascript -e 'tell application "System Events" to key code 144 using command down'`
+end
